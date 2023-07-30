@@ -1,2 +1,0 @@
-PASSWORD = "admin"
-USER = "admin"
