@@ -4,14 +4,17 @@ Clone repository and install requirements
 ```
 https://github.com/Nowidas/phonebook-fastAPI.git
 ```
+Optional: change config file `.env`
+
+Run project with Docker:
 ```
-pip install -r requirements.txt
+docker compose up --build
 ```
-Run project:
+Read docs on:
 ```
-uvicorn main:app --reload
+http://127.0.0.1:8002/docs
 ```
-Read docks on:
+Run tests by:
 ```
-http://127.0.0.1:8000/docs
+docker compose exec web pytest .
 ```

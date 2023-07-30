@@ -1,7 +1,6 @@
-from typing import Optional, Generic, TypeVar, List
+from typing import Generic, List, TypeVar
 from pydantic import BaseModel, Field, EmailStr
 from pydantic_extra_types.phone_numbers import PhoneNumber
-
 
 M = TypeVar("M")
 
@@ -29,10 +28,23 @@ class ContactSchema(BaseModel):
 class ContactDB(ContactSchema):
     id: int
 
-    class Config:
-        from_attributes = True
-        arbitrary_types_allowed = True
-
 
 class WelcomeMsgSchema(BaseModel):
     msg: str
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: str | None = None
+
+
+class UserSchema(BaseModel):
+    username: str
+
+
+class UserInDB(UserSchema):
+    hashed_password: str
